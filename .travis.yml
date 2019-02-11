@@ -6,6 +6,5 @@ before_install:
   - docker build -t prabhawm/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run prabhawmwm/docker-react npm run test -- --coverage
+  - docker run prabhawm/docker-react npm run test -- --coverage
 
-  
