@@ -3,20 +3,21 @@ services:
   - docker
 
 before_install:
-  - docker build -t prabhawm/ResumeAPP -f Dockerfile.dev .
+  - docker build -t prabhawm/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run prabhawm/ResumeAPP npm run test -- --coverage
+  - docker run prabhawm/docker-react npm run test -- --coverage
 
 deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
-  app: "ResumeAPP"
-  env: "Resumeapp-env"
+  app: "docker-react"
+  env: "DockerReact-env"
   bucket_name: "elasticbeanstalk-us-east-1-442114422298"
-  bucket_path: "ResumeAPP"
+  bucket_path: "docker-react"
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key:
     secure: "$AWS_SECRET_KEY"
+    
