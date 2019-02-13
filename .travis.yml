@@ -12,7 +12,7 @@ deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
   app: "resume-app"
-  env: "Resumeapp-env"
+  env: "ResumeApp1-env"
   bucket_name: "elasticbeanstalk-us-east-1-442114422298"
   bucket_path: "resume-app"
   on:
